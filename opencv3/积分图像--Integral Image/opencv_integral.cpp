@@ -6,7 +6,8 @@
 
 using namespace cv;
 using namespace std;
-//opencv×Ô´ø»ý·Öº¯Êý£ºcv::integral()
+//vs2015+opencv3.3.0
+//opencvè‡ªå¸¦ç§¯åˆ†å‡½æ•°ï¼šcv::integral()
 int main()
 {	
 	string floder_path = "/your-path/";
@@ -17,10 +18,10 @@ int main()
 	for (int i = 0; i < count; i++)
 	{
 		Mat srcImage = imread(Ori_filenames[i]);
-		Mat sum = Mat::zeros(srcImage.rows + 1, srcImage.cols + 1, CV_32FC1); //´´½¨È«Áã»ý·ÖÍ¼float32
-		Mat sqsum = Mat::zeros(srcImage.rows + 1, srcImage.cols + 1, CV_64FC1);  //Æ½·½ÏñËØÖµµÄ»ý·ÖÍ¼Ïñfloat64
+		Mat sum = Mat::zeros(srcImage.rows + 1, srcImage.cols + 1, CV_32FC1); //åˆ›å»ºå…¨é›¶ç§¯åˆ†å›¾float32
+		Mat sqsum = Mat::zeros(srcImage.rows + 1, srcImage.cols + 1, CV_64FC1);  //å¹³æ–¹åƒç´ å€¼çš„ç§¯åˆ†å›¾åƒfloat64
 		integral(srcImage, sum, sqsum, CV_32FC1, CV_64FC1);
-		// ¹éÒ»»¯ÏÔÊ¾
+		// å½’ä¸€åŒ–æ˜¾ç¤º
 		Mat result;
 		normalize(sum, result, 0, 255, NORM_MINMAX, CV_8UC1);  
 		imwrite(Ori_filenames[i], result);
