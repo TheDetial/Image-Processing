@@ -1,8 +1,8 @@
-#include <opencv2/opencv.hpp>
 #include <iostream>
+#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 #include <string.h>
 #include <math.h>
-#include <opencv/cv.h>
 
 using namespace cv;
 using namespace std;
