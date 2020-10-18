@@ -1,2 +1,2 @@
-palm detection and fingers counting
+# palm detection and fingers counting  
 待完善
